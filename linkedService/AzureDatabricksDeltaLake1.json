@@ -1,0 +1,16 @@
+{
+	"name": "AzureDatabricksDeltaLake1",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDatabricksDeltaLake",
+		"typeProperties": {
+			"domain": "https://adb-4331105375962152.12.azuredatabricks.net",
+			"clusterId": "20221101221325-0000",
+			"workspaceResourceId": "/subscriptions/e90bf844-554a-486d-a618-d5e3466e7eee/resourceGroups/imdb-rg-testing/providers/Microsoft.Databricks/workspaces/ImdbDatabricsTesting"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
