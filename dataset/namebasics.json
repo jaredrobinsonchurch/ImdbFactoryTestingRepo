@@ -1,0 +1,20 @@
+{
+	"name": "namebasics",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "imdbstorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "name_basics.json.gz",
+				"folderPath": "json/name_basics",
+				"fileSystem": "imdbcontainer"
+			}
+		},
+		"schema": {}
+	}
+}
