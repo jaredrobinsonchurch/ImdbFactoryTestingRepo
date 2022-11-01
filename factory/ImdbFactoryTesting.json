@@ -1,0 +1,9 @@
+{
+	"name": "ImdbFactoryTesting",
+	"location": "westus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "fc28c7eb-b769-426c-9877-45444a695ee1",
+		"tenantId": "61e6eeb3-5fd7-4aaa-ae3c-61e8deb09b79"
+	}
+}
