@@ -32,41 +32,74 @@
 							"type": "AzureDatabricksDeltaLakeImportCommand"
 						}
 					},
-					"enableStaging": false,
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "imdbstorage",
+							"type": "LinkedServiceReference"
+						},
+						"path": "imdbcontainer/staging"
+					},
+					"enableSkipIncompatibleRow": true,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
 							{
 								"source": {
 									"path": "$['nconst']"
+								},
+								"sink": {
+									"name": "nconst",
+									"type": "string"
 								}
 							},
 							{
 								"source": {
 									"path": "$['primaryName']"
+								},
+								"sink": {
+									"name": "primaryName",
+									"type": "string"
 								}
 							},
 							{
 								"source": {
 									"path": "$['birthYear']"
+								},
+								"sink": {
+									"name": "birthYear",
+									"type": "string"
 								}
 							},
 							{
 								"source": {
 									"path": "$['deathYear']"
+								},
+								"sink": {
+									"name": "deathYear",
+									"type": "string"
 								}
 							},
 							{
 								"source": {
-									"path": "$['primaryProfession'][0]"
+									"path": "primaryProfession"
+								},
+								"sink": {
+									"name": "primaryProfession",
+									"type": "string"
 								}
 							},
 							{
 								"source": {
-									"path": "$['knownForTitles'][0]"
+									"path": "knownForTitles"
+								},
+								"sink": {
+									"name": "knownForTitles",
+									"type": "string"
 								}
 							}
-						]
+						],
+						"collectionReference": ""
 					}
 				},
 				"inputs": [
