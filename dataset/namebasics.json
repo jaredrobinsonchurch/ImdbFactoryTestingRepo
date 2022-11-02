@@ -13,6 +13,10 @@
 				"fileName": "name_basics.json.gz",
 				"folderPath": "json/name_basics",
 				"fileSystem": "imdbcontainer"
+			},
+			"compression": {
+				"type": "gzip",
+				"level": "Optimal"
 			}
 		},
 		"schema": {}
