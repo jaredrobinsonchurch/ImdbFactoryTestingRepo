@@ -16,14 +16,14 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "JsonSource",
+						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
-							"type": "JsonReadSettings"
+							"type": "DelimitedTextReadSettings"
 						}
 					},
 					"sink": {
@@ -32,21 +32,15 @@
 							"type": "AzureDatabricksDeltaLakeImportCommand"
 						}
 					},
-					"enableStaging": true,
-					"stagingSettings": {
-						"linkedServiceName": {
-							"referenceName": "imdbstorage",
-							"type": "LinkedServiceReference"
-						},
-						"path": "imdbcontainer/staging"
-					},
+					"enableStaging": false,
 					"enableSkipIncompatibleRow": true,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
 							{
 								"source": {
-									"path": "$['nconst']"
+									"name": "nconst\tprimaryName\tbirthYear\tdeathYear\tprimaryProfession\tknownForTitles",
+									"type": "String"
 								},
 								"sink": {
 									"name": "nconst",
@@ -54,39 +48,41 @@
 								}
 							},
 							{
-								"source": {
-									"path": "$['primaryName']"
-								},
 								"sink": {
 									"name": "primaryName",
 									"type": "string"
 								}
 							},
 							{
-								"source": {
-									"path": "$['birthYear']"
-								},
 								"sink": {
 									"name": "birthYear",
 									"type": "string"
 								}
 							},
 							{
-								"source": {
-									"path": "$['deathYear']"
-								},
 								"sink": {
 									"name": "deathYear",
 									"type": "string"
 								}
+							},
+							{
+								"sink": {
+									"name": "primaryProfession",
+									"type": "string"
+								}
+							},
+							{
+								"sink": {
+									"name": "knownForTitles",
+									"type": "string"
+								}
 							}
-						],
-						"collectionReference": ""
+						]
 					}
 				},
 				"inputs": [
 					{
-						"referenceName": "namebasics",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				],
