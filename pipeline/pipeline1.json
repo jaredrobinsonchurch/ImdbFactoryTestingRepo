@@ -39,7 +39,7 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "nconst\tprimaryName\tbirthYear\tdeathYear\tprimaryProfession\tknownForTitles",
+									"name": "nconst",
 									"type": "String"
 								},
 								"sink": {
@@ -48,30 +48,50 @@
 								}
 							},
 							{
+								"source": {
+									"name": "primaryName",
+									"type": "String"
+								},
 								"sink": {
 									"name": "primaryName",
 									"type": "string"
 								}
 							},
 							{
+								"source": {
+									"name": "birthYear",
+									"type": "String"
+								},
 								"sink": {
 									"name": "birthYear",
 									"type": "string"
 								}
 							},
 							{
+								"source": {
+									"name": "deathYear",
+									"type": "String"
+								},
 								"sink": {
 									"name": "deathYear",
 									"type": "string"
 								}
 							},
 							{
+								"source": {
+									"name": "primaryProfession",
+									"type": "String"
+								},
 								"sink": {
 									"name": "primaryProfession",
 									"type": "string"
 								}
 							},
 							{
+								"source": {
+									"name": "knownForTitles",
+									"type": "String"
+								},
 								"sink": {
 									"name": "knownForTitles",
 									"type": "string"
