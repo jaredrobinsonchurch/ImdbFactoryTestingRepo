@@ -26,11 +26,58 @@
 							"type": "JsonReadSettings"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "AzureDatabricksDeltaLakeSink",
+						"importSettings": {
+							"type": "AzureDatabricksDeltaLakeImportCommand"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['nconst']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['primaryName']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['birthYear']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['deathYear']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['primaryProfession'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['knownForTitles'][0]"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
 						"referenceName": "namebasics",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureDatabricksDeltaLakeDataset1",
 						"type": "DatasetReference"
 					}
 				]
