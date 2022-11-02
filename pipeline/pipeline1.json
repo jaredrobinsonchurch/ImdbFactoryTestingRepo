@@ -79,24 +79,6 @@
 									"name": "deathYear",
 									"type": "string"
 								}
-							},
-							{
-								"source": {
-									"path": "primaryProfession"
-								},
-								"sink": {
-									"name": "primaryProfession",
-									"type": "string"
-								}
-							},
-							{
-								"source": {
-									"path": "knownForTitles"
-								},
-								"sink": {
-									"name": "knownForTitles",
-									"type": "string"
-								}
 							}
 						],
 						"collectionReference": ""
